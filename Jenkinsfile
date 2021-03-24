@@ -1,7 +1,7 @@
 pipeline {
     agent {
-       # restircting the job to run certain agents which matches the label
-       # label 'agent1' 
+       // restircting the job to run certain agents which matches the label
+       // label 'agent1' 
        docker {
            image 'maven:3.3.3'
        }
