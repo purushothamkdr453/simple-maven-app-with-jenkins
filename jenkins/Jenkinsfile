@@ -4,14 +4,13 @@ pipeline {
        // label 'agent1' 
        docker {
            image 'maven:3.3.3'
+           args '-v /root/.m2:/root/.m2'
        }
     }
     stages {
-        stage('checkout') {
+        stage('build') {
             steps {
-                sh 'mvn --version'
-                sh 'sleep 10'
-                sh 'echo Bye'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
